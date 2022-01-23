@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useState } from 'react';
+import "./App.css";
+import Light from "./Light";
+import Dark from './Dark';
+
+const App = () => {
+  const colors = ["yellow"];
+  const dcolors = ["yellow"]
+  const [lit, setLit] = useState("grey");
+  const [dlit, setDlit] = useState("grey");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+
+      {colors.map((color) => {
+        return (
+          <div>
+
+            <Light color={color} lit={lit} setLit={setLit} setDLit={setDlit}/>
+            {/* <Dark color={color} lit={lit} setLit={setLit}/>
+           */}
+
+
+          </div>
+        )
+      })}
+
+      {dcolors.map((color) => {
+        return (
+          <div>
+
+
+            <Dark color={color} dlit={dlit} setDLit={ setDlit} />
+
+
+
+          </div>
+        )
+      })}
+
+
+
+
     </div>
-  );
+
+  )
 }
+
 
 export default App;
