@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Dark =({color,dlit,setDLit,setLit})=>{
+const Dark =({color,dlit,setDLit})=>{
     return(
         <div>
             <div className="dark" style={{backgroundColor:color===dlit?color:"grey" }}>
